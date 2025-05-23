@@ -9,4 +9,5 @@ public class CardData
     public Sprite icono;
     public string opcion1;
     public string opcion2;
+    public int respuestaCorrecta;
 }
