@@ -10,6 +10,7 @@ public class CardManager : MonoBehaviour
     private int indice = 0; // Control de qué tarjeta se debe mostrar
 
     public TimerBar timerBar;
+    public RespuestaVisual respuestaVisual;
 
     void Start()
     {
