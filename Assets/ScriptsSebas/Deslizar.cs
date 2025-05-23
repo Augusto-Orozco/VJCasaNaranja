@@ -10,23 +10,27 @@ public class Deslizar : MonoBehaviour
     private Vector2 difference; // Diferencia entre la posición del mouse y el objeto al hacer clic
     private bool isDragging = false; // Indica si el objeto está siendo arrastrado
     public TimerBar timerBar;
+    public RespuestaVisual respuestaVisual;
 
 
     void Start()
     {
         // Se guarda la posición inicial al comenzar
         initialPosition = transform.position;
+        respuestaVisual = FindObjectOfType<RespuestaVisual>();
     }
 
     private void OnMouseDown()
     {
         // Calcula la diferencia entre el mouse y la posición del objeto
+        if (!timerBar.juegoIniciado) return;
         difference = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - (Vector2)transform.position;
         isDragging = true; // Activa el arrastre
     }
 
     private void OnMouseDrag()
     {
+        if (!isDragging || !timerBar.juegoIniciado) return;
         if (isDragging)
         {
             // Actualiza la posición del objeto mientras se arrastra con el mouse
@@ -37,6 +41,7 @@ public class Deslizar : MonoBehaviour
 
     private void OnMouseUp()
     {
+        if (!timerBar.juegoIniciado) return;
         isDragging = false; // Termina el arrastre
         float desplazamientoX = transform.position.x - initialPosition.x; // Calcula cuánto se movió en el eje X
 
@@ -56,11 +61,28 @@ public class Deslizar : MonoBehaviour
     {
         Debug.Log("Entrando en la corrutina DeslizarFuera.");
 
-        while (Mathf.Abs(transform.position.x) < 10f)
+        CardBehavior card = GetComponent<CardBehavior>();
+        if (card != null)
         {
-            transform.position += (Vector3)direccion * 30f * Time.deltaTime;
-            yield return null;
+            int selection = (direccion == Vector2.right) ? 2 : 1;
+
+            if (selection == card.datos.respuestaCorrecta)
+            {
+                Debug.Log("Respuesta correcta");
+                respuestaVisual.MostrarCorrecto();
+            }
+            else
+            {
+                Debug.Log("Respuesta incorrecta");
+                respuestaVisual.MostrarIncorrecto();
+            }
         }
+
+        while (Mathf.Abs(transform.position.x) < 10f)
+            {
+                transform.position += (Vector3)direccion * 30f * Time.deltaTime;
+                yield return null;
+            }
 
         // Verifica que el objeto no haya sido destruido antes de destruirlo
         if (gameObject != null)
