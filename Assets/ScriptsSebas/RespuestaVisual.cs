@@ -11,7 +11,7 @@ public class RespuestaVisual : MonoBehaviour
     void Start()
     {
         if (checkmark != null) checkmark.alpha = 0f;
-        if (checkmark != null) checkmark.alpha = 0f;
+        if (ximage != null) ximage.alpha = 0f;
     }
 
     public void MostrarCorrecto()

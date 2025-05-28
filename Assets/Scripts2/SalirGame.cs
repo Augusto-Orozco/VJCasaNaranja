@@ -16,6 +16,7 @@ public class SalirGame : MonoBehaviour
             {
                 Debug.Log("Respuesta correcta");
                 respuestaVisual.MostrarCorrecto();
+                PuntosTareasManager.Instancia.AgregarPuntos(30);
             }
             else
             {
@@ -23,6 +24,7 @@ public class SalirGame : MonoBehaviour
                 respuestaVisual.MostrarIncorrecto();
             }
         }
+
         StartCoroutine(CambiarEscenaRetraso("Nivel2MiniJuego3"));
     }
 
@@ -37,6 +39,7 @@ public class SalirGame : MonoBehaviour
             {
                 Debug.Log("Respuesta correcta");
                 respuestaVisual.MostrarCorrecto();
+                PuntosTareasManager.Instancia.AgregarPuntos(30);
             }
             else
             {
@@ -58,6 +61,7 @@ public class SalirGame : MonoBehaviour
             {
                 Debug.Log("Respuesta correcta");
                 respuestaVisual.MostrarCorrecto();
+                PuntosTareasManager.Instancia.AgregarPuntos(40);
             }
             else
             {
@@ -70,6 +74,7 @@ public class SalirGame : MonoBehaviour
 
     public void Restart()
     {
+        PuntosTareasManager.Instancia.ReiniciarPuntos();
         SceneManager.LoadScene("ChooseWork");
     }
     public void ChangeScene()
@@ -83,15 +88,9 @@ public class SalirGame : MonoBehaviour
         respuestaVisual = FindObjectOfType<RespuestaVisual>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     private System.Collections.IEnumerator CambiarEscenaRetraso(string nombreEscena)
     {
-        yield return new WaitForSeconds(1.5f); 
+        yield return new WaitForSeconds(0.5f); 
         SceneManager.LoadScene(nombreEscena);
     }
 

@@ -12,6 +12,8 @@ public class CardManager : MonoBehaviour
     public TimerBar timerBar;
     public RespuestaVisual respuestaVisual;
 
+    public PuntosCartasBehaviour puntosCartasBehaviour;
+
     void Start()
     {
         // Asegúrate de que todas las tarjetas estén desactivadas al inicio
