@@ -12,6 +12,8 @@ public class TimerBar : MonoBehaviour
     private float timeLeft;
     public bool juegoIniciado = false; // Hacerlo público
     private bool juegoTerminado = false; // Nueva variable para saber si el juego ha terminado
+    private float tiempoPenalizacion = 10f;
+    private float tiempoAcumulado = 0f;
 
     void Start()
     {
@@ -35,13 +37,20 @@ public class TimerBar : MonoBehaviour
         if (!juegoIniciado || juegoTerminado) return; // No actualizar si el juego no ha iniciado o ya terminó
 
         timeLeft -= Time.deltaTime;
+        tiempoAcumulado += Time.deltaTime;
         timerSlider.value = timeLeft;
 
-        if (timeLeft <= 0f)
+        if (tiempoAcumulado >= tiempoPenalizacion)
         {
-            // Aquí cargamos la escena "EndScene" cuando el tiempo se acabe
-            TerminarJuego(true);
+            PuntosCartasBehaviour.Instancia.RestarPuntos(50); 
+            tiempoAcumulado = 0f;
         }
+
+        if (timeLeft <= 0f)
+            {
+                // Aquí cargamos la escena "EndScene" cuando el tiempo se acabe
+                TerminarJuego(true);
+            }
     }
 
     public void IniciarJuego()
