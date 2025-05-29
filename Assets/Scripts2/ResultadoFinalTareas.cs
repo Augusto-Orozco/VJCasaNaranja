@@ -16,7 +16,7 @@ public class ResultadoFinalTareas : MonoBehaviour
     void Start()
     {
         int puntos = PuntosTareasManager.Instancia.puntos;
-        int tiempoTotal = 30;
+        int tiempoTotal = 20;
 
         textoPuntos.text = puntos.ToString();
 
@@ -55,7 +55,7 @@ public class ResultadoFinalTareas : MonoBehaviour
         };
 
         aPIResultados.EnviarResultado(datos);
-        SFXManager.Instancia.ReproducirCompletado();
+        SFXManagerTareas.Instancia.ReproducirCompletado();
 
     }
 }

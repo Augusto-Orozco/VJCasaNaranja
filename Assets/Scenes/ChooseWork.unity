@@ -1607,7 +1607,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 508927734}
         m_TargetAssemblyTypeName: SalirGame, Assembly-CSharp
         m_MethodName: ChangeScene
         m_Mode: 1
@@ -1742,7 +1742,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2059792816}
-  - component: {fileID: 2059792815}
+  - component: {fileID: 2059792817}
   m_Layer: 0
   m_Name: SFXManager
   m_TagString: Untagged
@@ -1750,22 +1750,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2059792815
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2059792814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8570ede53438fc442843c4cfa0458160, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sonidoDeFondo: {fileID: 8300000, guid: 646963ab49343484aafef5eee3b66ba6, type: 3}
-  respuestaCorrecta: {fileID: 8300000, guid: 3e928fd3791894f0aaa2f9eae8186293, type: 3}
-  respuestaIncorrecta: {fileID: 8300000, guid: 3dd1beb154c894139aaf9e6451fbb9db, type: 3}
-  minijuegoCompletado: {fileID: 8300000, guid: 95cbb40916f1f4b598883c3e55a4f0ba, type: 3}
 --- !u!4 &2059792816
 Transform:
   m_ObjectHideFlags: 0
@@ -1781,6 +1765,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2059792817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2059792814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fcee9ced283d4d3eadc2fe622b9e6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sonidoDeFondo: {fileID: 8300000, guid: 646963ab49343484aafef5eee3b66ba6, type: 3}
+  respuestaCorrecta: {fileID: 8300000, guid: 3e928fd3791894f0aaa2f9eae8186293, type: 3}
+  respuestaIncorrecta: {fileID: 8300000, guid: 3dd1beb154c894139aaf9e6451fbb9db, type: 3}
+  minijuegoCompletado: {fileID: 8300000, guid: 95cbb40916f1f4b598883c3e55a4f0ba, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
