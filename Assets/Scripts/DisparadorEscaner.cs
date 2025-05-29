@@ -1,5 +1,6 @@
+using System.Collections;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class DisparadorEscaner : MonoBehaviour
 {
     public GameObject[] burbujaPrefabs;
@@ -9,17 +10,26 @@ public class DisparadorEscaner : MonoBehaviour
 
     private GameObject burbujaActual;
 
+    public PowerUp powerUpManager;
+    public GameObject zonaDerrota;
+
+
     void Start()
     {
         generarBurbuja();
     }
 
+    public GameObject GetBurbujaActual()
+    {
+        return burbujaActual;
+    }
     void Update()
     {
         rotarDisparador();
         if (Input.GetKeyDown(KeyCode.Space))
             Disparar();
     }
+
 
     void rotarDisparador()
     {
@@ -39,20 +49,57 @@ public class DisparadorEscaner : MonoBehaviour
         GameObject selectedPrefab = burbujaPrefabs[Random.Range(0, burbujaPrefabs.Length)];
         burbujaActual = Instantiate(selectedPrefab, spawnPoint.position, Quaternion.identity);
         burbujaActual.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
+
+        TipoBurbuja tipo = burbujaActual.GetComponent<TipoBurbuja>();
+        if (tipo != null)
+            tipo.esInicial = false;
     }
+
+
+    public GridPrefab gridPrefab;
+
+    int disparos = 0;
 
     void Disparar()
     {
         if (burbujaActual == null) return;
 
-        //Obtiene el componente Rigidbody2D y cambia su estado a dinámico para permitirle moverse
         Rigidbody2D rb = burbujaActual.GetComponent<Rigidbody2D>();
         rb.bodyType = RigidbodyType2D.Dynamic;
-        rb.gravityScale = 0f; //Mantiene la gravedad desactivada
+        rb.gravityScale = 0f;
         rb.linearVelocity = spawnPoint.up.normalized * fuerzaDisparo;
+        StartCoroutine(IgnorarZonaDerrotaTemporalmente(burbujaActual));
+
 
         burbujaActual = null;
-        // Vuelve a cargar una nueva burbuja después de un pequeño retraso
         Invoke(nameof(generarBurbuja), 0.5f);
+
+        disparos++;
+
+        if (disparos % 8 == 0) // cada 5 disparos agrega fila
+        {
+            gridPrefab.AgregarFilaSuperior();
+        }
+
+        if (disparos % 6 == 0)
+        {
+            string colorRandom = burbujaPrefabs[Random.Range(0, burbujaPrefabs.Length)].GetComponent<TipoBurbuja>().tipo;
+            powerUpManager.MostrarPowerUp(colorRandom);
+        }
     }
+    IEnumerator IgnorarZonaDerrotaTemporalmente(GameObject bola)
+    {
+        Collider2D bolaCol = bola.GetComponent<Collider2D>();
+        Collider2D zonaDerrotaCol = zonaDerrota.GetComponent<Collider2D>();
+
+        if (bolaCol != null && zonaDerrotaCol != null)
+            Physics2D.IgnoreCollision(bolaCol, zonaDerrotaCol, true);
+
+        yield return new WaitForSeconds(0.5f);
+
+        // Verificamos si el objeto todavía existe antes de reactivar colisión
+        if (bolaCol != null && zonaDerrotaCol != null)
+            Physics2D.IgnoreCollision(bolaCol, zonaDerrotaCol, false);
+    }
+
 }
