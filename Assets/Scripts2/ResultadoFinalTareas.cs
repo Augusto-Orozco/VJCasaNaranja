@@ -55,5 +55,7 @@ public class ResultadoFinalTareas : MonoBehaviour
         };
 
         aPIResultados.EnviarResultado(datos);
+        SFXManager.Instancia.ReproducirCompletado();
+
     }
 }

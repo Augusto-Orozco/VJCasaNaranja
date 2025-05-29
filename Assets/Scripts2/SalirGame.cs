@@ -17,11 +17,13 @@ public class SalirGame : MonoBehaviour
                 Debug.Log("Respuesta correcta");
                 respuestaVisual.MostrarCorrecto();
                 PuntosTareasManager.Instancia.AgregarPuntos(30);
+                SFXManager.Instancia.ReproducirCorrecto();
             }
             else
             {
                 Debug.Log("Respuesta incorrecta");
                 respuestaVisual.MostrarIncorrecto();
+                SFXManager.Instancia.ReproducirIncorrecto();
             }
         }
 
@@ -40,11 +42,13 @@ public class SalirGame : MonoBehaviour
                 Debug.Log("Respuesta correcta");
                 respuestaVisual.MostrarCorrecto();
                 PuntosTareasManager.Instancia.AgregarPuntos(30);
+                SFXManager.Instancia.ReproducirCorrecto();
             }
             else
             {
                 Debug.Log("Respuesta incorrecta");
                 respuestaVisual.MostrarIncorrecto();
+                SFXManager.Instancia.ReproducirIncorrecto();
             }
         }
         StartCoroutine(CambiarEscenaRetraso("Nivel3MiniJuego3"));
@@ -62,11 +66,13 @@ public class SalirGame : MonoBehaviour
                 Debug.Log("Respuesta correcta");
                 respuestaVisual.MostrarCorrecto();
                 PuntosTareasManager.Instancia.AgregarPuntos(40);
+                SFXManager.Instancia.ReproducirCorrecto();
             }
             else
             {
                 Debug.Log("Respuesta incorrecta");
                 respuestaVisual.MostrarIncorrecto();
+                SFXManager.Instancia.ReproducirIncorrecto();
             }
         }
         StartCoroutine(CambiarEscenaRetraso("EndScene2"));

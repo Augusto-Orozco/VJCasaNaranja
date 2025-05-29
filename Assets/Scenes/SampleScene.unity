@@ -1732,6 +1732,54 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &912694733
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 912694735}
+  - component: {fileID: 912694734}
+  m_Layer: 0
+  m_Name: SFXManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &912694734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912694733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13e6d74a996824c75b192b2ad289b707, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respuestaCorrecta: {fileID: 8300000, guid: 3e928fd3791894f0aaa2f9eae8186293, type: 3}
+  respuestaIncorrecta: {fileID: 8300000, guid: 3dd1beb154c894139aaf9e6451fbb9db, type: 3}
+  minijuegoCompletado: {fileID: 8300000, guid: 95cbb40916f1f4b598883c3e55a4f0ba, type: 3}
+  musicaFondo: {fileID: 8300000, guid: 9411cede8eb654255a26f2b78f64edf6, type: 3}
+--- !u!4 &912694735
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 912694733}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 977.1401, y: 327, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &954114592
 GameObject:
   m_ObjectHideFlags: 0
@@ -3621,3 +3669,4 @@ SceneRoots:
   - {fileID: 615223719}
   - {fileID: 2060517152}
   - {fileID: 1274331930}
+  - {fileID: 912694735}

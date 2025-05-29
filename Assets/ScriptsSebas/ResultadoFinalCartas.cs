@@ -52,5 +52,6 @@ public class ResultadoFinalCartas : MonoBehaviour
         };
 
         aPIResultados.EnviarResultado(datos);
+        SFXManagerCartas.Instancia.ReproducirCompletado();
     }
 }
