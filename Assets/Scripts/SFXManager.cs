@@ -49,9 +49,25 @@ public class SFXManager : MonoBehaviour
 
     private IEnumerator DetenerMusicaYReproducirFinal()
     {
-        audioSource.Pause(); 
-        AudioSource.PlayClipAtPoint(minijuegoCompletado, Camera.main.transform.position); 
+        audioSource.Pause();
+        AudioSource.PlayClipAtPoint(minijuegoCompletado, Camera.main.transform.position);
 
-        yield return new WaitForSeconds(minijuegoCompletado.length); 
+        yield return new WaitForSeconds(minijuegoCompletado.length);
     }
+
+    public void ResetMusica()
+    {
+        audioSource.UnPause();
+    }
+    
+    public void DetenerMusic()
+    {
+        audioSource.Stop();
+    }
+
+    public void EmpezarMusica()
+    {
+        audioSource.Play();
+    }
+
 }

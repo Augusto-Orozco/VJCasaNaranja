@@ -11,19 +11,21 @@ public class PuntosCartasBehaviour : MonoBehaviour
 
     void Awake()
     {
-        if (Instancia == null)
-        {
-            Instancia = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        Instancia = this;
+        DontDestroyOnLoad(gameObject);
     }
+
     void Start()
     {
-        ActualizarTexto();
+        if (textoPuntos == null)
+        {
+            GameObject textoGO = GameObject.Find("Puntos");
+            if (textoGO != null)
+            {
+                textoPuntos = textoGO.GetComponent<Text>();
+                ActualizarTexto();
+            }
+        }
     }
 
     public void AgregarPuntos(int cantidad)
@@ -44,5 +46,11 @@ public class PuntosCartasBehaviour : MonoBehaviour
         {
             textoPuntos.text = $"Puntos: {puntuacion}";
         }
+    }
+
+    public void ResetPuntos()
+    {
+        puntuacion = 0;
+        ActualizarTexto();
     }
 }

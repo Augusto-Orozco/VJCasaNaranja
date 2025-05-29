@@ -18,6 +18,9 @@ public class Deslizar : MonoBehaviour
         // Se guarda la posición inicial al comenzar
         initialPosition = transform.position;
         respuestaVisual = FindObjectOfType<RespuestaVisual>();
+        PuntosCartasBehaviour.Instancia.ResetPuntos();
+        SFXManagerCartas.Instancia.EmpezarMusica();
+
     }
 
     private void OnMouseDown()
