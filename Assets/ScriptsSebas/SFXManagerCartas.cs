@@ -1,13 +1,15 @@
 using UnityEngine;
 using System.Collections;
 
-public class SFXManager : MonoBehaviour
+public class SFXManagerCartas : MonoBehaviour
 {
-    public static SFXManager Instancia;
-    public AudioClip sonidoDeFondo;
+    public static SFXManagerCartas Instancia;
+
     public AudioClip respuestaCorrecta;
     public AudioClip respuestaIncorrecta;
     public AudioClip minijuegoCompletado;
+    public AudioClip musicaFondo;
+
     private AudioSource audioSource;
 
     private void Awake()
@@ -26,8 +28,8 @@ public class SFXManager : MonoBehaviour
     void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.volume = 0.1f;
-        audioSource.clip = sonidoDeFondo;
+        audioSource.volume = 0.3f;
+        audioSource.clip = musicaFondo;
         audioSource.loop = true;
         audioSource.Play();
     }
@@ -46,12 +48,12 @@ public class SFXManager : MonoBehaviour
     {
         StartCoroutine(DetenerMusicaYReproducirFinal());
     }
-
+    
     private IEnumerator DetenerMusicaYReproducirFinal()
     {
-        audioSource.Pause(); 
-        AudioSource.PlayClipAtPoint(minijuegoCompletado, Camera.main.transform.position); 
+        audioSource.Pause();
+        AudioSource.PlayClipAtPoint(minijuegoCompletado, Camera.main.transform.position);
 
-        yield return new WaitForSeconds(minijuegoCompletado.length); 
+        yield return new WaitForSeconds(minijuegoCompletado.length);
     }
 }

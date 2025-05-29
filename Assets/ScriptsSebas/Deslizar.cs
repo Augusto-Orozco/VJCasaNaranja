@@ -71,12 +71,14 @@ public class Deslizar : MonoBehaviour
                 Debug.Log("Respuesta correcta");
                 respuestaVisual.MostrarCorrecto();
                 PuntosCartasBehaviour.Instancia.AgregarPuntos(200);
+                SFXManagerCartas.Instancia.ReproducirCorrecto();
             }
             else
             {
                 Debug.Log("Respuesta incorrecta");
                 respuestaVisual.MostrarIncorrecto();
                 PuntosCartasBehaviour.Instancia.RestarPuntos(200);
+                SFXManagerCartas.Instancia.ReproducirIncorrecto();
             }
         }
 

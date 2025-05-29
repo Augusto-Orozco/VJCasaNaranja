@@ -913,6 +913,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb9bcb5062b77444aa398ec25ffc7d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  respuestaVisual: {fileID: 0}
+  respuestaCorrecta: 0
 --- !u!1 &884914266
 GameObject:
   m_ObjectHideFlags: 0
@@ -1761,6 +1763,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sonidoDeFondo: {fileID: 8300000, guid: 646963ab49343484aafef5eee3b66ba6, type: 3}
+  respuestaCorrecta: {fileID: 8300000, guid: 3e928fd3791894f0aaa2f9eae8186293, type: 3}
+  respuestaIncorrecta: {fileID: 8300000, guid: 3dd1beb154c894139aaf9e6451fbb9db, type: 3}
+  minijuegoCompletado: {fileID: 8300000, guid: 95cbb40916f1f4b598883c3e55a4f0ba, type: 3}
 --- !u!4 &2059792816
 Transform:
   m_ObjectHideFlags: 0
