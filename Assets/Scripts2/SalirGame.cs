@@ -17,13 +17,13 @@ public class SalirGame : MonoBehaviour
                 Debug.Log("Respuesta correcta");
                 respuestaVisual.MostrarCorrecto();
                 PuntosTareasManager.Instancia.AgregarPuntos(30);
-                SFXManager.Instancia.ReproducirCorrecto();
+                SFXManagerTareas.Instancia.ReproducirCorrecto();
             }
             else
             {
                 Debug.Log("Respuesta incorrecta");
                 respuestaVisual.MostrarIncorrecto();
-                SFXManager.Instancia.ReproducirIncorrecto();
+                SFXManagerTareas.Instancia.ReproducirIncorrecto();
             }
         }
 
@@ -42,13 +42,13 @@ public class SalirGame : MonoBehaviour
                 Debug.Log("Respuesta correcta");
                 respuestaVisual.MostrarCorrecto();
                 PuntosTareasManager.Instancia.AgregarPuntos(30);
-                SFXManager.Instancia.ReproducirCorrecto();
+                SFXManagerTareas.Instancia.ReproducirCorrecto();
             }
             else
             {
                 Debug.Log("Respuesta incorrecta");
                 respuestaVisual.MostrarIncorrecto();
-                SFXManager.Instancia.ReproducirIncorrecto();
+                SFXManagerTareas.Instancia.ReproducirIncorrecto();
             }
         }
         StartCoroutine(CambiarEscenaRetraso("Nivel3MiniJuego3"));
@@ -66,13 +66,13 @@ public class SalirGame : MonoBehaviour
                 Debug.Log("Respuesta correcta");
                 respuestaVisual.MostrarCorrecto();
                 PuntosTareasManager.Instancia.AgregarPuntos(40);
-                SFXManager.Instancia.ReproducirCorrecto();
+                SFXManagerTareas.Instancia.ReproducirCorrecto();
             }
             else
             {
                 Debug.Log("Respuesta incorrecta");
                 respuestaVisual.MostrarIncorrecto();
-                SFXManager.Instancia.ReproducirIncorrecto();
+                SFXManagerTareas.Instancia.ReproducirIncorrecto();
             }
         }
         StartCoroutine(CambiarEscenaRetraso("EndScene2"));
@@ -81,13 +81,13 @@ public class SalirGame : MonoBehaviour
     public void Restart()
     {
         PuntosTareasManager.Instancia.ReiniciarPuntos();
-        SFXManager.Instancia.ResetMusica();
+        SFXManagerTareas.Instancia.ResetMusica();
         SceneManager.LoadScene("ChooseWork");
     }
     public void ChangeScene()
     {
         PuntosTareasManager.Instancia.ReiniciarPuntos();
-        SFXManager.Instancia.DetenerMusic();
+        SFXManagerTareas.Instancia.DetenerMusic();
         SceneManager.LoadScene("MenuPrincipal");
     }
 
@@ -95,7 +95,7 @@ public class SalirGame : MonoBehaviour
     void Start()
     {
         respuestaVisual = FindObjectOfType<RespuestaVisual>();
-        SFXManager.Instancia.EmpezarMusica();
+        SFXManagerTareas.Instancia.EmpezarMusica();
     }
 
     private System.Collections.IEnumerator CambiarEscenaRetraso(string nombreEscena)

@@ -89422,7 +89422,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8570ede53438fc442843c4cfa0458160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sonidoDeFondo: {fileID: 0}
+  sonidoDeFondo: {fileID: 8300000, guid: 646963ab49343484aafef5eee3b66ba6, type: 3}
+  respuestaCorrecta: {fileID: 8300000, guid: 3e928fd3791894f0aaa2f9eae8186293, type: 3}
+  respuestaIncorrecta: {fileID: 8300000, guid: 3dd1beb154c894139aaf9e6451fbb9db, type: 3}
+  minijuegoCompletado: {fileID: 8300000, guid: 95cbb40916f1f4b598883c3e55a4f0ba, type: 3}
 --- !u!1 &1547935898
 GameObject:
   m_ObjectHideFlags: 0
