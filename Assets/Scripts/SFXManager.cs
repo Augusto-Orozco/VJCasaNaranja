@@ -1,11 +1,9 @@
 using UnityEngine;
-using System.Collections;
 
 public class SFXManager : MonoBehaviour
 {
     public AudioClip sonidoDeFondo;
     private AudioSource audioSource;
-
 
     void Start()
     {
@@ -15,5 +13,4 @@ public class SFXManager : MonoBehaviour
         audioSource.loop = true;
         audioSource.Play();
     }
-
 }
