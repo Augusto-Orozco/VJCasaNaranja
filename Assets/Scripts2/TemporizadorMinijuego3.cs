@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class TemporizadorMinijuego3 : MonoBehaviour
 {
-    public float tiempoInicial = 30f;
+    public float tiempoInicial = 20f;
     private float tiempoRestante;
     public Text textoTiempo;
 
@@ -21,12 +21,14 @@ public class TemporizadorMinijuego3 : MonoBehaviour
         {
             return;
         }
+
         tiempoRestante -= Time.deltaTime;
 
         if (tiempoRestante <= 0)
         {
             tiempoRestante = 0;
             tiempoAgotado = true;
+            FinJuego();
         }
 
         MostrarTiempo();
