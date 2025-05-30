@@ -18,6 +18,7 @@ public class ContadorTiempo : MonoBehaviour
 
     public void DetenerContador()
     {
+        PlayerPrefs.SetInt("tiempoNivel", Mathf.FloorToInt(tiempoTranscurrido));
         contar = false;
     }
 

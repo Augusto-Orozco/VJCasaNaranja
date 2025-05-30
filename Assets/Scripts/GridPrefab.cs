@@ -8,7 +8,7 @@ public class GridPrefab : MonoBehaviour
     public float radio = 0.5f;
 
     public float altura = 2f; 
-    public static Vector3 gridOffset; // Static para usar desde otros scripts
+    public static Vector3 gridOffset; 
 
 
 
@@ -28,14 +28,11 @@ public class GridPrefab : MonoBehaviour
         // Ajusta offset del grid
         gridOffset -= new Vector3(0f, height, 0f);
 
-        // Usa el índice actual de filas para calcular zigzag ANTES de incrementarlo
-        int filaZigzag = filas; // importante usarlo antes del incremento
+        int filaZigzag = filas; 
         float nuevaAlturaFila = height * filaZigzag;
 
-        // Genera fila con su índice real
         GenerarFilaEnPosicion(nuevaAlturaFila, filaZigzag);
 
-        // Incrementa después
         filas++;
     }
 
@@ -77,7 +74,6 @@ public class GridPrefab : MonoBehaviour
             }
         }
     }
-    // Genera una fila en la parte superior del grid actual
     void GenerarFilaEnPosicion(float alturaFila, int filaIndex)
     {
         float width = 2f * radio;

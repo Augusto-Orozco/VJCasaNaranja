@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Spawner : MonoBehaviour
 {
-    public float gridSize = 1.0f;  // Tamaño de la celda de la cuadrícula
+    public float gridSize = 1.0f;  
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -18,7 +18,6 @@ public class Spawner : MonoBehaviour
             Vector3 alignedPosition = AlinearCuadricula(transform.position);
             transform.position = alignedPosition;
 
-            // Aquí haces que la burbuja se haga hija del grid
             GridPrefab grid = FindObjectOfType<GridPrefab>();
             if (grid != null)
             {
@@ -28,14 +27,14 @@ public class Spawner : MonoBehaviour
         TipoBurbuja tipo = GetComponent<TipoBurbuja>();
         if (tipo != null)
         {
-            BuscarConectadas(gameObject); // Esta función se encarga de destruir si es necesario
+            BuscarConectadas(gameObject); 
         }
     }
 
     // Función para alinear la burbuja a la cuadrícula en zigzag
     Vector3 AlinearCuadricula(Vector3 position)
     {
-        float radio = 0.5f; // Usa el mismo valor exacto del GridPrefab
+        float radio = 0.5f;
         float width = 2f * radio;
         float height = Mathf.Sqrt(3f) * radio;
 
@@ -89,8 +88,6 @@ public class Spawner : MonoBehaviour
                 }
             }
         }
-
-        // Solo destruir si hay al menos una burbuja disparada Y todas son del mismo tipo
 
         if (resultado.Count >= 6 && hayNoInicial)
         {
