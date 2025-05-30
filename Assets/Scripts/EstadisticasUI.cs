@@ -12,7 +12,7 @@ public class EstadisticasUI : MonoBehaviour
 
     void Start()
     {
-        numEmpleado = PlayerPrefs.GetInt("numEmpleado", 0); // Asegúrate que ya se guardó previamente
+        numEmpleado = PlayerPrefs.GetInt("numEmpleado", 0); 
         StartCoroutine(ObtenerEstadisticas(numEmpleado));
     }
 
@@ -40,7 +40,6 @@ public class EstadisticasUI : MonoBehaviour
         }
     }
 
-    [System.Serializable]
     public class Estadisticas
     {
         public int numEmpleado;

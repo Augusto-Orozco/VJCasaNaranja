@@ -11,10 +11,9 @@ public class Spawner : MonoBehaviour
         if (collision.collider.CompareTag("Pared") || collision.collider.CompareTag("Burbuja"))
         {
             Rigidbody2D rb = GetComponent<Rigidbody2D>();
-            rb.linearVelocity = Vector2.zero;  // Detener la burbuja
+            rb.linearVelocity = Vector2.zero;  
             rb.bodyType = RigidbodyType2D.Kinematic;
 
-            // Alinea la burbuja a la cuadrícula
             Vector3 alignedPosition = AlinearCuadricula(transform.position);
             transform.position = alignedPosition;
 
@@ -31,7 +30,6 @@ public class Spawner : MonoBehaviour
         }
     }
 
-    // Función para alinear la burbuja a la cuadrícula en zigzag
     Vector3 AlinearCuadricula(Vector3 position)
     {
         float radio = 0.5f;
@@ -91,7 +89,6 @@ public class Spawner : MonoBehaviour
 
         if (resultado.Count >= 6 && hayNoInicial)
         {
-            // Buscar el color
             string color = tipoInicio.tipo;
 
             Consejos sistemaConsejos = FindObjectOfType<Consejos>();

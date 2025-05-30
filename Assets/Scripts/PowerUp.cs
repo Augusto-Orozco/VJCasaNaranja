@@ -11,7 +11,7 @@ public class PowerUp : MonoBehaviour
 
     void Start()
     {
-        disparador = FindObjectOfType<DisparadorEscaner>(); // <-- Esto es nuevo
+        disparador = FindObjectOfType<DisparadorEscaner>();
 
         botonPowerUp.gameObject.SetActive(false);
         botonPowerUp.onClick.AddListener(ActivarPowerUp);

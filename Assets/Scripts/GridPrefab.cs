@@ -21,11 +21,9 @@ public class GridPrefab : MonoBehaviour
     {
         float height = Mathf.Sqrt(3f) * radio;
 
-        // Mueve todo hacia abajo
         foreach (Transform hijo in transform)
             hijo.position -= new Vector3(0f, height, 0f);
 
-        // Ajusta offset del grid
         gridOffset -= new Vector3(0f, height, 0f);
 
         int filaZigzag = filas; 
