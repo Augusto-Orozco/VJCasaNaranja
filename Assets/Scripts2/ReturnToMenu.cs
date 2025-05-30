@@ -22,6 +22,13 @@ public class ReturnToMenu : MonoBehaviour
     {
     SceneManager.LoadScene("EndScene2");
     }  
+
+    public void ChangeScene()
+    {
+        SFXManagerTareas.Instancia.DetenerMusic();
+        SceneManager.LoadScene("MenuPrincipal");
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

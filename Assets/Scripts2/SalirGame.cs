@@ -81,7 +81,6 @@ public class SalirGame : MonoBehaviour
     public void Restart()
     {
         PuntosTareasManager.Instancia.ReiniciarPuntos();
-        SFXManagerTareas.Instancia.ResetMusica();
         SceneManager.LoadScene("ChooseWork");
     }
     public void ChangeScene()
@@ -95,7 +94,6 @@ public class SalirGame : MonoBehaviour
     void Start()
     {
         respuestaVisual = FindObjectOfType<RespuestaVisual>();
-        SFXManagerTareas.Instancia.EmpezarMusica();
     }
 
     private System.Collections.IEnumerator CambiarEscenaRetraso(string nombreEscena)

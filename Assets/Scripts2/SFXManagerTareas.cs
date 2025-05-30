@@ -12,15 +12,10 @@ public class SFXManagerTareas : MonoBehaviour
 
     private void Awake()
     {
-        if (Instancia == null)
-        {
-            Instancia = this;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        
+        Instancia = this;
+        DontDestroyOnLoad(gameObject);
+        
     }
 
     void Start()
