@@ -14,7 +14,7 @@ public class NivelUsuario
 
 public class APIResultados : MonoBehaviour
 {
-    private string url = "https://localhost:7029/NivelUsuario/ActualizarIntento"; // Cambia esto por tu URL real
+    private string url = "https://localhost:7029/NivelUsuario/ActualizarIntento"; 
 
     public void EnviarResultado(NivelUsuario datos)
     {

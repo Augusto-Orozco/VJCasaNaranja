@@ -28,7 +28,7 @@ public class UIController : MonoBehaviour
  
     public void ExitGame() 
     {
-        UnityEditor.EditorApplication.isPlaying = false;
+        SceneManager.LoadScene("MenuPrincipal");
         //Application.Quit(); //Para aplicacion y salir
     }
 }

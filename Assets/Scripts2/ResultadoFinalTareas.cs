@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Timeline;
 using UnityEngine.UI;
 
 public class ResultadoFinalTareas : MonoBehaviour
@@ -10,11 +11,12 @@ public class ResultadoFinalTareas : MonoBehaviour
 
     public APIResultados aPIResultados;
 
-    public int numEmpleado = 12345;
+    public int numEmpleadoSesion;
     public int idNivel = 3;
 
     void Start()
     {
+        numEmpleadoSesion = PlayerPrefs.GetInt("numEmpleado", 0);
         int puntos = PuntosTareasManager.Instancia.puntos;
         int tiempoTotal = 20;
 
@@ -47,7 +49,7 @@ public class ResultadoFinalTareas : MonoBehaviour
 
         NivelUsuario datos = new NivelUsuario
         {
-            numEmpleado = numEmpleado,
+            numEmpleado = numEmpleadoSesion,
             idNivel = idNivel,
             estrellas = estrellasObtenidas,
             puntuacion = puntos,

@@ -6,7 +6,15 @@ public class TuClaseFinal : MonoBehaviour
 {
     public Text textoPuntaje;
     public Image[] estrellas;
-    public float tiempoEsperaAnimacion = 2f; 
+    public float tiempoEsperaAnimacion = 2f;
+
+
+    private int numEmpleadoSesion;
+    public APIResultados aPIResultados;
+    private int idNivel = 1;
+
+    private int tiempoTrans;
+
 
     void Start()
     {
@@ -23,7 +31,6 @@ public class TuClaseFinal : MonoBehaviour
         yield return new WaitForSeconds(tiempoEsperaAnimacion);
 
         int puntaje = PlayerPrefs.GetInt("PuntajeFinal", 0);
-        Debug.Log(puntaje);
 
         if (textoPuntaje != null)
             textoPuntaje.text = puntaje.ToString();
@@ -35,6 +42,26 @@ public class TuClaseFinal : MonoBehaviour
             estrellas[i].enabled = true;
             yield return new WaitForSeconds(1f);
         }
+        numEmpleadoSesion = PlayerPrefs.GetInt("numEmpleado", 0);
+
+        tiempoTrans = PlayerPrefs.GetInt("tiempoNivel", 0);
+
+        NivelUsuario datos = new NivelUsuario
+        {
+            numEmpleado = numEmpleadoSesion,
+            idNivel = idNivel,
+            estrellas = cantidadEstrellas,
+            puntuacion = puntaje,
+            tiempoNivel = tiempoTrans
+        };
+        Debug.Log(numEmpleadoSesion);
+        Debug.Log(idNivel);
+        Debug.Log(cantidadEstrellas);
+        Debug.Log(puntaje);
+        Debug.Log(tiempoTrans);
+
+
+        aPIResultados.EnviarResultado(datos);
     }
 
     int CalcularEstrellas(int puntaje)
