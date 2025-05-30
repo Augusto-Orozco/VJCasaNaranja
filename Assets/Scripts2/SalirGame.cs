@@ -98,7 +98,7 @@ public class SalirGame : MonoBehaviour
 
     private System.Collections.IEnumerator CambiarEscenaRetraso(string nombreEscena)
     {
-        yield return new WaitForSeconds(0.5f); 
+        yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene(nombreEscena);
     }
 
