@@ -28,6 +28,7 @@ public class UIController : MonoBehaviour
  
     public void ExitGame() 
     {
+        PlayerPrefs.DeleteKey("numEmpleado");
         UnityEditor.EditorApplication.isPlaying = false;
         //Application.Quit(); //Para aplicacion y salir
     }

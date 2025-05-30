@@ -11,8 +11,6 @@ public class Login : MonoBehaviour
     public InputField contraseñaInput;
     public Text mensajeError;
 
-    public GameObject datosUsuarioPrefab; 
-
     string urlBase = "https://localhost:7029/Login/login/"; 
 
     public void IntentarLogin()
@@ -44,14 +42,10 @@ public class Login : MonoBehaviour
 
         if (datos != null && datos.contraseña == contraseñaIngresada)
         {
-            // Instanciar el prefab y guardar el NumEmpleado
-            GameObject usuarioGO = Instantiate(datosUsuarioPrefab);
-            DatosUsuario datosScript = usuarioGO.GetComponent<DatosUsuario>();
-            datosScript.numEmpleado = datos.numEmpleado;
-
-            // Ir a la escena del menú
+            PlayerPrefs.SetInt("numEmpleado", datos.numEmpleado);
             SceneManager.LoadScene("MenuPrincipal");
         }
+
         else
         {
             mensajeError.text = "Usuario o contraseña incorrectos.";

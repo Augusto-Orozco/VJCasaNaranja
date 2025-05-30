@@ -7,11 +7,12 @@ public class ResultadoFinalCartas : MonoBehaviour
     public GameObject estrella1, estrella2, estrella3;
     public APIResultados aPIResultados;
 
-    public int numEmpleado = 12345;
+    public int numEmpleadoSesion;
     public int idNivel = 2;
 
     void Start()
     {
+        numEmpleadoSesion = PlayerPrefs.GetInt("numEmpleado", 0);
         int puntos = PuntosCartasBehaviour.Instancia.puntuacion;
         int tiempoTotal = 180;
 
@@ -44,7 +45,7 @@ public class ResultadoFinalCartas : MonoBehaviour
 
         NivelUsuario datos = new NivelUsuario
         {
-            numEmpleado = numEmpleado,
+            numEmpleado = numEmpleadoSesion,
             idNivel = idNivel,
             estrellas = estrellasObtenidas,
             puntuacion = puntos,
