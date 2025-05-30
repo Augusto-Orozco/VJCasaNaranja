@@ -21,7 +21,7 @@ public class SFXManagerTareas : MonoBehaviour
     void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.volume = 0.1f;
+        audioSource.volume = 0.3f;
         audioSource.clip = sonidoDeFondo;
         audioSource.loop = true;
         audioSource.Play();
