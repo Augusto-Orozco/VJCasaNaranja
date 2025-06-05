@@ -8,18 +8,26 @@ public class SeleccionManager : MonoBehaviour
     public List<GameObject> personajes;
     public List<AudioSource> canciones;
 
+    
     private const string personajesAPI = "https://localhost:7029/Augusto/ObtenerPersonajes";
     private const string cancionesAPI = "https://localhost:7029/AugustoController2/ObtenerCanciones";
 
+    private int numEmpleadoSesion;
+
     void Start()
     {
+        numEmpleadoSesion = PlayerPrefs.GetInt("numEmpleado", 0);
+
         StartCoroutine(CargarPersonaje());
         StartCoroutine(CargarCancion());
+        
     }
-
+    
     IEnumerator CargarPersonaje()
     {
-        using (UnityWebRequest www = UnityWebRequest.Get(personajesAPI))
+
+        string url = $"{personajesAPI}?numEmpleado={numEmpleadoSesion}";
+        using (UnityWebRequest www = UnityWebRequest.Get(url))
         {
             yield return www.SendWebRequest();
 
@@ -38,7 +46,8 @@ public class SeleccionManager : MonoBehaviour
 
     IEnumerator CargarCancion()
     {
-        using (UnityWebRequest www = UnityWebRequest.Get(cancionesAPI))
+        string url = $"{cancionesAPI}?numEmpleado={numEmpleadoSesion}";
+        using (UnityWebRequest www = UnityWebRequest.Get(url))
         {
             yield return www.SendWebRequest();
 
@@ -50,7 +59,7 @@ public class SeleccionManager : MonoBehaviour
             {
                 string json = "{\"items\":" + www.downloadHandler.text + "}";
                 TrackResponse respuesta = JsonUtility.FromJson<TrackResponse>(json);
-                ActivarCancion(respuesta.items[0].nombreAspectoM);
+                ActivarCancion(respuesta.items[0].nombreMusica);
             }
         }
     }
@@ -95,8 +104,8 @@ public class PersonajeResponse
 [System.Serializable]
 public class TrackDTO
 {
-    public int idPersonalizacionM;
-    public string nombreAspectoM;
+    public int idPersonalizacion;
+    public string nombreMusica;
 }
 
 [System.Serializable]
