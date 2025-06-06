@@ -29,7 +29,7 @@ public class PowerUp : MonoBehaviour
 
         controladorUI.PlayPoder();
 
-        botonPowerUp.gameObject.SetActive(true);  // Mostrar el botón
+        botonPowerUp.gameObject.SetActive(true);  
         botonPowerUp.interactable = true;
     }
 
