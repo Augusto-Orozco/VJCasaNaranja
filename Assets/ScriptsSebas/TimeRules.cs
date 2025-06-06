@@ -5,10 +5,12 @@ using System.Collections;
 
 public class TimerBar : MonoBehaviour
 {
+    public static TimerBar Instancia;
+
     public Slider timerSlider;
     public GameObject panel; // El panel que contiene las animaciones
     private CanvasGroup panelCanvasGroup; // El CanvasGroup del panel
-    public float totalTime = 20f;
+    public int totalTime;
     private float timeLeft;
     public bool juegoIniciado = false; // Hacerlo público
     private bool juegoTerminado = false; // Nueva variable para saber si el juego ha terminado

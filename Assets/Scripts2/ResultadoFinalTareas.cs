@@ -28,18 +28,18 @@ public class ResultadoFinalTareas : MonoBehaviour
 
         int estrellasObtenidas = 0;
 
-        if (puntos >= 50 && puntos < 70)
+        if (puntos >= 300)
         {
             estrella1.SetActive(true);
             estrellasObtenidas = 1;
         }
-        else if (puntos >= 70 && puntos < 100)
+        else if (puntos >= 600)
         {
             estrella1.SetActive(true);
             estrella2.SetActive(true);
             estrellasObtenidas = 2;
         }
-        else if (puntos >= 100)
+        else if (puntos >= 900)
         {
             estrella1.SetActive(true);
             estrella2.SetActive(true);
