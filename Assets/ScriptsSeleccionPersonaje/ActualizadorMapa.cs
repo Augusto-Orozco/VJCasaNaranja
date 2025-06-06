@@ -40,17 +40,20 @@ public class ActualizadorMapa : MonoBehaviour
 
     void ActivarMapaPorEstrellas(int estrellas)
     {
-        foreach (var mapa in mapas)
-            mapa.SetActive(false);
+        // Siempre dejar activo el mapa base (mapas[0])
+        mapas[0].SetActive(true);
 
-        if (estrellas < 3)
-            mapas[0].SetActive(true);  // Primer mapa
-        else if (estrellas < 6)
-            mapas[1].SetActive(true);  // Segundo mapa
-        else
-            mapas[2].SetActive(true);  // Tercer mapa
+        // Desactivar los mapas secundarios antes de activar el correcto
+        mapas[1].SetActive(false);
+        mapas[2].SetActive(false);
+
+        if (estrellas == 5)
+            mapas[1].SetActive(true); // Mapa intermedio
+        else if (estrellas == 9)
+            mapas[2].SetActive(true); // Mapa avanzado
     }
 }
+
 
 // -------- DTOs para respuesta de estrellas --------
 
