@@ -16,7 +16,7 @@ public class SalirGame : MonoBehaviour
             {
                 Debug.Log("Respuesta correcta");
                 respuestaVisual.MostrarCorrecto();
-                PuntosTareasManager.Instancia.AgregarPuntos(30);
+                PuntosTareasManager.Instancia.AgregarPuntos(300);
                 SFXManagerTareas.Instancia.ReproducirCorrecto();
             }
             else
@@ -41,7 +41,7 @@ public class SalirGame : MonoBehaviour
             {
                 Debug.Log("Respuesta correcta");
                 respuestaVisual.MostrarCorrecto();
-                PuntosTareasManager.Instancia.AgregarPuntos(30);
+                PuntosTareasManager.Instancia.AgregarPuntos(300);
                 SFXManagerTareas.Instancia.ReproducirCorrecto();
             }
             else
@@ -65,7 +65,7 @@ public class SalirGame : MonoBehaviour
             {
                 Debug.Log("Respuesta correcta");
                 respuestaVisual.MostrarCorrecto();
-                PuntosTareasManager.Instancia.AgregarPuntos(40);
+                PuntosTareasManager.Instancia.AgregarPuntos(400);
                 SFXManagerTareas.Instancia.ReproducirCorrecto();
             }
             else

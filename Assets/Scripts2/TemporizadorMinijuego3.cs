@@ -4,7 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class TemporizadorMinijuego3 : MonoBehaviour
 {
-    public float tiempoInicial = 20f;
+    public static TemporizadorMinijuego3 Instancia;
+    public int tiempoInicial;
     private float tiempoRestante;
     public Text textoTiempo;
 
