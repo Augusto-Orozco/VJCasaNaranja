@@ -29,6 +29,16 @@ public class ReturnToMenu : MonoBehaviour
         SceneManager.LoadScene("MenuPrincipal");
     }
 
+    public void ChangeScene2()
+    {
+        SceneManager.LoadScene("MenuPrincipal");
+    }
+
+    public void GotoLeaderBoard()
+    {
+        SceneManager.LoadScene("LeaderBoard");
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
