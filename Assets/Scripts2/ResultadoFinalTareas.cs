@@ -14,11 +14,13 @@ public class ResultadoFinalTareas : MonoBehaviour
     public int numEmpleadoSesion;
     public int idNivel = 3;
 
+    public int tiempoTotal;
+
     void Start()
     {
         numEmpleadoSesion = PlayerPrefs.GetInt("numEmpleado", 0);
         int puntos = PuntosTareasManager.Instancia.puntos;
-        int tiempoTotal = 20;
+        tiempoTotal = PlayerPrefs.GetInt("tiempoInicial", 0);
 
         textoPuntos.text = puntos.ToString();
 
@@ -28,12 +30,12 @@ public class ResultadoFinalTareas : MonoBehaviour
 
         int estrellasObtenidas = 0;
 
-        if (puntos >= 300)
+        if (puntos >= 300 && puntos < 600)
         {
             estrella1.SetActive(true);
             estrellasObtenidas = 1;
         }
-        else if (puntos >= 600)
+        else if (puntos >= 600 && puntos < 900)
         {
             estrella1.SetActive(true);
             estrella2.SetActive(true);
