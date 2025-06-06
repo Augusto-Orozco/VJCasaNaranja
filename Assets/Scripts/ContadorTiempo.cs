@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class ContadorTiempo : MonoBehaviour
 {
-    public Text textoTiempo; // Asigna este en el inspector
+    public Text textoTiempo; 
     private float tiempoTranscurrido = 0f;
     private bool contar = true;
 
@@ -18,6 +18,7 @@ public class ContadorTiempo : MonoBehaviour
 
     public void DetenerContador()
     {
+        PlayerPrefs.SetInt("tiempoNivel", Mathf.FloorToInt(tiempoTranscurrido));
         contar = false;
     }
 

@@ -155,8 +155,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 42, y: -396}
-  m_SizeDelta: {x: 289.3412, y: 106.3657}
+  m_AnchoredPosition: {x: 0, y: -552}
+  m_SizeDelta: {x: 444.8699, y: 163.5402}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &188279150
 MonoBehaviour:
@@ -412,8 +412,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 42, y: -97}
-  m_SizeDelta: {x: 1376.8, y: 550.7135}
+  m_AnchoredPosition: {x: 0, y: -83}
+  m_SizeDelta: {x: 1513.4553, y: 736.7974}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &840861083
 MonoBehaviour:
@@ -437,7 +437,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 3419e533df606064987adb52a368c993, type: 3}
-    m_FontSize: 50
+    m_FontSize: 64
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 1
@@ -450,8 +450,8 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "1. Apunta y dispara las burbujas hacia arriba. Cada tipo representa una
     tarea como l\xEDder de tienda. \n2. Junta 3 o m\xE1s burbujas del mismo tipo
-    para procesar correctamente cada \xE1rea de gesti\xF3n.\n3. ! Evita que el tablero
-    se llene \xA1"
+    para procesar correctamente cada \xE1rea de gesti\xF3n.\n3. \xA1 Evita que el
+    tablero se llene !"
 --- !u!222 &840861084
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -502,7 +502,7 @@ Transform:
   m_GameObject: {fileID: 864678974}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.26, y: 2.3, z: 10.034223}
+  m_LocalPosition: {x: 0, y: 2.7, z: 10.034223}
   m_LocalScale: {x: 2.1501064, y: 1.1075355, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -657,7 +657,7 @@ Transform:
   m_GameObject: {fileID: 1135916485}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.3927, y: -0.2457, z: 10.034223}
+  m_LocalPosition: {x: 0.77, y: -0.2457, z: 10.034223}
   m_LocalScale: {x: 1.2698371, y: 0.9797425, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

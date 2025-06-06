@@ -76,7 +76,7 @@ public class DisparadorEscaner : MonoBehaviour
 
         disparos++;
 
-        if (disparos % 8 == 0) // cada 5 disparos agrega fila
+        if (disparos % 8 == 0) 
         {
             gridPrefab.AgregarFilaSuperior();
         }
@@ -97,7 +97,6 @@ public class DisparadorEscaner : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        // Verificamos si el objeto todavía existe antes de reactivar colisión
         if (bolaCol != null && zonaDerrotaCol != null)
             Physics2D.IgnoreCollision(bolaCol, zonaDerrotaCol, false);
     }

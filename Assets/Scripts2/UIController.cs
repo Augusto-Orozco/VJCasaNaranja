@@ -14,6 +14,7 @@ public class UIController : MonoBehaviour
     public void PlayPoder()
     {
         poderAnimator.SetTrigger("PlayPoder");
+        Debug.Log("Deberia de Aparecer El Poder");
     }
     
     public void CambiarEscena(){
@@ -28,7 +29,7 @@ public class UIController : MonoBehaviour
  
     public void ExitGame() 
     {
-        UnityEditor.EditorApplication.isPlaying = false;
+        SceneManager.LoadScene("MenuPrincipal");
         //Application.Quit(); //Para aplicacion y salir
     }
 }

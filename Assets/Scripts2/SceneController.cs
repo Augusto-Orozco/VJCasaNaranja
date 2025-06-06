@@ -3,12 +3,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    public string sceneName;  // Nombre de la escena a cargar
+    public string sceneName;  
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))  // Verifica que sea el personaje
+        if (other.CompareTag("Player"))  
         {
-            SceneManager.LoadScene(sceneName);  // Carga la escena especificada
+            SceneManager.LoadScene(sceneName); 
         }
     }
 }
