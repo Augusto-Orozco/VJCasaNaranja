@@ -14,6 +14,7 @@ public class UIController : MonoBehaviour
     public void PlayPoder()
     {
         poderAnimator.SetTrigger("PlayPoder");
+        Debug.Log("Deberia de Aparecer El Poder");
     }
     
     public void CambiarEscena(){
