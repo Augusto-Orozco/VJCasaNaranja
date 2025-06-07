@@ -31,7 +31,7 @@ public class ActualizadorMapa : MonoBehaviour
             {
                 string json = "{\"items\":" + www.downloadHandler.text + "}";
                 EstrellaResponse respuesta = JsonUtility.FromJson<EstrellaResponse>(json);
-                int totalEstrellas = respuesta.items[0].TotalEstrellas;
+                int totalEstrellas = respuesta.items[0].totalEstrellas;
 
                 ActivarMapaPorEstrellas(totalEstrellas);
             }
@@ -40,18 +40,26 @@ public class ActualizadorMapa : MonoBehaviour
 
     void ActivarMapaPorEstrellas(int estrellas)
     {
-        // Siempre dejar activo el mapa base (mapas[0])
-        mapas[0].SetActive(true);
+        // Desactiva todos los mapas primero
+        foreach (var mapa in mapas)
+            mapa.SetActive(false);
 
-        // Desactivar los mapas secundarios antes de activar el correcto
-        mapas[1].SetActive(false);
-        mapas[2].SetActive(false);
-
-        if (estrellas == 5)
+        // Activa el mapa según el rango de estrellas
+        if (estrellas < 5)
+        {
+            mapas[0].SetActive(true); // Mapa base
+        }
+        else if (estrellas >= 5 && estrellas < 9)
+        {
             mapas[1].SetActive(true); // Mapa intermedio
-        else if (estrellas == 9)
+        }
+        else // estrellas >= 9
+        {
             mapas[2].SetActive(true); // Mapa avanzado
+        }
     }
+
+
 }
 
 
@@ -60,7 +68,7 @@ public class ActualizadorMapa : MonoBehaviour
 [System.Serializable]
 public class EstrellaDTO
 {
-    public int TotalEstrellas;
+    public int totalEstrellas;
 }
 
 [System.Serializable]
