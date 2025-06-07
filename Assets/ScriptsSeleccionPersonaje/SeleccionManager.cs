@@ -8,7 +8,7 @@ public class SeleccionManager : MonoBehaviour
     public List<GameObject> personajes;
     public List<AudioSource> canciones;
 
-    
+
     private const string personajesAPI = "https://localhost:7029/Augusto/ObtenerPersonajes";
     private const string cancionesAPI = "https://localhost:7029/AugustoController2/ObtenerCanciones";
 
@@ -20,9 +20,9 @@ public class SeleccionManager : MonoBehaviour
 
         StartCoroutine(CargarPersonaje());
         StartCoroutine(CargarCancion());
-        
+
     }
-    
+
     IEnumerator CargarPersonaje()
     {
 
@@ -74,7 +74,11 @@ public class SeleccionManager : MonoBehaviour
     {
         foreach (var cancion in canciones)
         {
-            if (cancion.gameObject.name == nombre)
+            bool esSeleccionada = cancion.gameObject.name == nombre;
+    
+            cancion.gameObject.SetActive(esSeleccionada);
+    
+            if (esSeleccionada)
             {
                 cancion.Play();
             }
@@ -84,6 +88,7 @@ public class SeleccionManager : MonoBehaviour
             }
         }
     }
+
 }
 
 // -------- Clases auxiliares (DTOs) --------

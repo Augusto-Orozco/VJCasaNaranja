@@ -1651,7 +1651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fcee9ced283d4d3eadc2fe622b9e6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sonidoDeFondo: {fileID: 8300000, guid: 646963ab49343484aafef5eee3b66ba6, type: 3}
+  sonidoDeFondo: {fileID: 8300000, guid: 6665298ba3a81d8419ece0a882f5cbfb, type: 3}
   respuestaCorrecta: {fileID: 8300000, guid: 3e928fd3791894f0aaa2f9eae8186293, type: 3}
   respuestaIncorrecta: {fileID: 8300000, guid: 3dd1beb154c894139aaf9e6451fbb9db, type: 3}
   minijuegoCompletado: {fileID: 8300000, guid: 95cbb40916f1f4b598883c3e55a4f0ba, type: 3}
