@@ -58,6 +58,7 @@ public class PowerUp : MonoBehaviour
         }
         botonPowerUp.gameObject.SetActive(false);
         botonPowerUp.interactable = false;
+        controladorUI.PlayPoder();
     }
     
     
@@ -82,7 +83,7 @@ public class PowerUp : MonoBehaviour
                 tituloPowerUp.text = "Orden y Limpieza (Elimina Piezas Amarillas)";
                 descripcionPowerUp.text = "Un entorno limpio es clave para una experiencia de compra agradable.";
                 break;
-            case "morado":
+            case "morada":
                 tituloPowerUp.text = "Liderazgo y Motivación (Elimina Piezas Moradas)";
                 descripcionPowerUp.text = "Un buen líder inspira a su equipo y promueve un ambiente positivo.";
                 break;

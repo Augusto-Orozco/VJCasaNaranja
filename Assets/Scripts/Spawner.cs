@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Spawner : MonoBehaviour
 {
-    public float gridSize = 1.0f;  
+    public float gridSize = 1.0f;
 
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -16,6 +16,9 @@ public class Spawner : MonoBehaviour
 
             Vector3 alignedPosition = AlinearCuadricula(transform.position);
             transform.position = alignedPosition;
+
+            FindObjectOfType<SFXManager>().bolitasCrack();
+
 
             GridPrefab grid = FindObjectOfType<GridPrefab>();
             if (grid != null)

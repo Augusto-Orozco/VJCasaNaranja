@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Deslizar : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class Deslizar : MonoBehaviour
     private bool isDragging = false; // Indica si el objeto está siendo arrastrado
     public TimerBar timerBar;
     public RespuestaVisual respuestaVisual;
-
 
     void Start()
     {
@@ -27,6 +27,9 @@ public class Deslizar : MonoBehaviour
     {
         // Calcula la diferencia entre el mouse y la posición del objeto
         if (!timerBar.juegoIniciado) return;
+
+        if (EstaTocandoUI()) return;
+
         difference = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - (Vector2)transform.position;
         isDragging = true; // Activa el arrastre
     }
@@ -34,6 +37,7 @@ public class Deslizar : MonoBehaviour
     private void OnMouseDrag()
     {
         if (!isDragging || !timerBar.juegoIniciado) return;
+
         if (isDragging)
         {
             // Actualiza la posición del objeto mientras se arrastra con el mouse
@@ -59,7 +63,7 @@ public class Deslizar : MonoBehaviour
             StartCoroutine(VolverAPosicion());
     }
 
-        // Corrutina para deslizar el objeto hacia fuera de la pantalla
+    // Corrutina para deslizar el objeto hacia fuera de la pantalla
     IEnumerator DeslizarFuera(Vector2 direccion)
     {
         Debug.Log("Entrando en la corrutina DeslizarFuera.");
@@ -86,10 +90,10 @@ public class Deslizar : MonoBehaviour
         }
 
         while (Mathf.Abs(transform.position.x) < 10f)
-            {
-                transform.position += (Vector3)direccion * 30f * Time.deltaTime;
-                yield return null;
-            }
+        {
+            transform.position += (Vector3)direccion * 30f * Time.deltaTime;
+            yield return null;
+        }
 
         // Verifica que el objeto no haya sido destruido antes de destruirlo
         if (gameObject != null)
@@ -101,7 +105,7 @@ public class Deslizar : MonoBehaviour
         if (manager != null)
         {
             Debug.Log("Verificando si hay más tarjetas...");
-            
+
             if (manager.HayMasTarjetas())
             {
                 Debug.Log("Aún hay más tarjetas.");
@@ -115,7 +119,7 @@ public class Deslizar : MonoBehaviour
             }
         }
     }
-        // Corrutina para volver suavemente a la posición original
+    // Corrutina para volver suavemente a la posición original
     IEnumerator VolverAPosicion()
     {
         // Mientras no esté lo suficientemente cerca de la posición original
@@ -127,6 +131,45 @@ public class Deslizar : MonoBehaviour
         }
         // Asegura que la posición final sea exactamente la inicial
         transform.position = initialPosition;
+    }
+ 
+    bool EstaTocandoUI()
+    {
+        if (Input.touchCount > 0)
+        {   
+            
+            Touch touch = Input.GetTouch(0);
+            PointerEventData eventData = new PointerEventData(EventSystem.current);
+            eventData.position = touch.position;
+
+            List<RaycastResult> results = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(eventData, results);
+            foreach (var result in results)
+            {
+                Debug.Log("Tocando objeto UI: " + result.gameObject.name);
+            }
+
+
+            return results.Count > 0;
+        }
+        else if (Input.GetMouseButtonDown(0)) 
+        {
+
+            PointerEventData eventData = new PointerEventData(EventSystem.current);
+            eventData.position = Input.mousePosition;
+
+            List<RaycastResult> results = new List<RaycastResult>();
+            EventSystem.current.RaycastAll(eventData, results);
+
+            foreach (var result in results)
+            {
+                Debug.Log("Tocando objeto UI: " + result.gameObject.name);
+            }
+
+            return results.Count > 0;
+        }
+
+        return false;
     }
 
 }

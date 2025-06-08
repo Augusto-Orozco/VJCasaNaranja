@@ -9,9 +9,8 @@ public class SFXManagerCartas : MonoBehaviour
     public AudioClip respuestaIncorrecta;
     public AudioClip minijuegoCompletado;
     public AudioClip musicaFondo;
-
-    private AudioSource audioSource;
-
+    private AudioSource musicaSource;
+    private AudioSource efectosSource;
     private void Awake()
     {
         if (Instancia == null)
@@ -25,24 +24,29 @@ public class SFXManagerCartas : MonoBehaviour
         }
     }
 
+
     void Start()
     {
-        audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.volume = 0.3f;
-        audioSource.clip = musicaFondo;
-        audioSource.loop = true;
-        audioSource.Play();
-    }
+        musicaSource = gameObject.AddComponent<AudioSource>();
+        musicaSource.volume = PlayerPrefs.GetFloat("VolumenMusicaCartas", 0.5f);
+        musicaSource.clip = musicaFondo;
+        musicaSource.loop = true;
+        musicaSource.Play();
 
+        efectosSource = gameObject.AddComponent<AudioSource>();
+        efectosSource.volume = PlayerPrefs.GetFloat("VolumenEfectosCartas", 0.5f);
+        efectosSource.loop = false;
+    }
     public void ReproducirCorrecto()
     {
-        audioSource.PlayOneShot(respuestaCorrecta);
+        efectosSource.PlayOneShot(respuestaCorrecta);
     }
 
     public void ReproducirIncorrecto()
     {
-        audioSource.PlayOneShot(respuestaIncorrecta);
+        efectosSource.PlayOneShot(respuestaIncorrecta);
     }
+
 
     public void ReproducirCompletado()
     {
@@ -51,24 +55,42 @@ public class SFXManagerCartas : MonoBehaviour
 
     private IEnumerator DetenerMusicaYReproducirFinal()
     {
-        audioSource.Pause();
-        AudioSource.PlayClipAtPoint(minijuegoCompletado, Camera.main.transform.position);
+        if (musicaSource != null)
+            musicaSource.Pause();
 
+        AudioSource.PlayClipAtPoint(minijuegoCompletado, Camera.main.transform.position);
         yield return new WaitForSeconds(minijuegoCompletado.length);
     }
 
+
     public void ResetMusica()
     {
-        audioSource.UnPause();
+        if (musicaSource != null)
+            musicaSource.UnPause();
     }
 
     public void DetenerMusic()
     {
-        audioSource.Stop();
+        if (musicaSource != null)
+            musicaSource.Stop();
     }
 
     public void EmpezarMusica()
     {
-        audioSource.Play();
+        if (musicaSource != null && !musicaSource.isPlaying)
+            musicaSource.Play();
     }
+
+
+    public void SetVolumenEfectos(float valor)
+    {
+        if (efectosSource != null)
+            efectosSource.volume = valor;
+    }
+
+    public AudioSource GetMusicaSource()
+    {
+        return musicaSource;
+    }
+
 }
