@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5b199d3092b0f4ae88812888c3277c1d
+guid: 33c20930a340e411299c54fb8132c139
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2780540300400067551
-    second: Checkmark_0
+      213: 5746518802371656684
+    second: CartaCliente1_2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -152,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Checkmark_0
+      name: CartaCliente1_2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1280
-        height: 1256
+        width: 380
+        height: 772
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fd30109dba6769620800000000000000
-      internalID: 2780540300400067551
+      spriteID: ceb3776876cbfbf40800000000000000
+      internalID: 5746518802371656684
       vertices: []
       indices: 
       edges: []
@@ -187,7 +187,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Checkmark_0: 2780540300400067551
+      CartaCliente1_2_0: 5746518802371656684
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
