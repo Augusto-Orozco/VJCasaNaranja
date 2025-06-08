@@ -2,8 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
 
-
-public class OpcionesControllerCartas : MonoBehaviour
+public class OpcionesControllerTareas : MonoBehaviour
 {
     public Slider sliderMusica;
     public Slider sliderEfectos;
@@ -12,7 +11,7 @@ public class OpcionesControllerCartas : MonoBehaviour
     public Image brilloOverlay;
 
     private AudioSource musicaFuente;
-    private SFXManagerCartas sfx;
+    private SFXManagerTareas sfx;
 
     void Start()
     {
@@ -21,17 +20,17 @@ public class OpcionesControllerCartas : MonoBehaviour
 
     private IEnumerator EsperarYConfigurar()
     {
-        while (SFXManagerCartas.Instancia == null || SFXManagerCartas.Instancia.GetMusicaSource() == null)
-        {
+        yield return new WaitForSeconds(0.1f);
+        
+        while (SFXManagerTareas.Instancia == null)
             yield return null;
-        }
 
-        sfx = SFXManagerCartas.Instancia;
+        sfx = SFXManagerTareas.Instancia;
         musicaFuente = sfx.GetMusicaSource();
 
-        float volMusica = PlayerPrefs.GetFloat("VolumenMusicaCartas", 0.5f);
-        float volEfectos = PlayerPrefs.GetFloat("VolumenEfectosCartas", 0.5f);
-        float brillo = PlayerPrefs.GetFloat("BrilloCartas", 1f);
+        float volMusica = PlayerPrefs.GetFloat("VolumenMusicaTareas", 0.3f);
+        float volEfectos = PlayerPrefs.GetFloat("VolumenEfectosTareas", 0.5f);
+        float brillo = PlayerPrefs.GetFloat("BrilloTareas", 1f);
 
         sliderMusica.value = volMusica;
         sliderEfectos.value = volEfectos;
@@ -45,22 +44,21 @@ public class OpcionesControllerCartas : MonoBehaviour
         sliderEfectos.onValueChanged.AddListener(CambiarVolumenEfectos);
         sliderBrillo.onValueChanged.AddListener(CambiarBrillo);
     }
+
     public void CambiarVolumenMusica(float valor)
     {
         if (musicaFuente != null)
             musicaFuente.volume = valor;
 
-        PlayerPrefs.SetFloat("VolumenMusicaCartas", valor);
+        PlayerPrefs.SetFloat("VolumenMusicaTareas", valor);
     }
 
     public void CambiarVolumenEfectos(float valor)
     {
         if (sfx != null)
-        {
-            sfx.SetVolumenEfectos(valor); 
-        }
+            sfx.SetVolumenEfectos(valor);
 
-        PlayerPrefs.SetFloat("VolumenEfectosCartas", valor);
+        PlayerPrefs.SetFloat("VolumenEfectosTareas", valor);
     }
 
     void CambiarBrillo(float valor)
@@ -72,6 +70,6 @@ public class OpcionesControllerCartas : MonoBehaviour
             brilloOverlay.color = c;
         }
 
-        PlayerPrefs.SetFloat("BrilloCartas", valor);
+        PlayerPrefs.SetFloat("BrilloTareas", valor);
     }
 }
