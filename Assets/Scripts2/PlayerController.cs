@@ -5,19 +5,21 @@ public class PlayerController : MonoBehaviour
     [SerializeField] Rigidbody2D rb;
     [SerializeField] Animator anim;
     [SerializeField] float speed;
-    [SerializeField] float idleThreshold = 4f; // Tiempo de espera para activar animación
+    [SerializeField] float idleThreshold = 4f;
 
-    Vector3 move;
+    private float horizontal = 0f;
+    private float vertical = 0f;
+
     float idleTimer = 0f;
     float repeatTimer = 0f;
     bool isIdle = false;
 
     void Update()
     {
-        move = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0).normalized;
+        Vector3 move = new Vector3(horizontal, vertical, 0).normalized;
 
         anim.SetFloat("horizontal", move.x);
-        anim.SetFloat("vertical", move.y); // Cambia la dirección de la animación según el movimiento
+        anim.SetFloat("vertical", move.y);
 
         if (move.magnitude == 0)
         {
@@ -31,13 +33,12 @@ public class PlayerController : MonoBehaviour
                 if (repeatTimer >= idleThreshold)
                 {
                     anim.SetTrigger("playIdleSpecial");
-                    repeatTimer = 0f; // Reinicia para que se repita cada 5 segundos
+                    repeatTimer = 0f;
                 }
             }
         }
         else
         {
-            // Si el jugador se mueve, reseteamos todo
             idleTimer = 0f;
             repeatTimer = 0f;
             isIdle = false;
@@ -46,6 +47,16 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
+        Vector3 move = new Vector3(horizontal, vertical, 0).normalized;
         rb.MovePosition(transform.position + (move * speed * Time.fixedDeltaTime));
     }
+
+    // Métodos para botones UI
+    public void MoverIzquierda() => horizontal = -1f;
+    public void MoverDerecha() => horizontal = 1f;
+    public void MoverArriba() => vertical = 1f;
+    public void MoverAbajo() => vertical = -1f;
+
+    public void DetenerHorizontal() => horizontal = 0f;
+    public void DetenerVertical() => vertical = 0f;
 }

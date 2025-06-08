@@ -72,7 +72,22 @@ public class SeleccionManager : MonoBehaviour
     void ActivarPersonaje(string nombre)
     {
         foreach (var personaje in personajes)
-            personaje.SetActive(personaje.name == nombre);
+        {
+            bool esActivo = personaje.name == nombre;
+            personaje.SetActive(esActivo);
+
+            if (esActivo)
+            {
+                var controlador = personaje.GetComponent<PlayerController>();
+                if (controlador != null)
+                {
+                    // Encuentra el UIControladorMovil en la escena y asigna el personaje activo
+                    UIControladorMovil ui = FindObjectOfType<UIControladorMovil>();
+                    if (ui != null)
+                        ui.AsignarJugador(controlador);
+                }
+            }
+        }
     }
 
     void ActivarCancion(string nombre)

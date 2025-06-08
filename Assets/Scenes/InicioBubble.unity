@@ -448,10 +448,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "1. Apunta y dispara las burbujas hacia arriba. Cada tipo representa una
-    tarea como l\xEDder de tienda. \n2. Junta 3 o m\xE1s burbujas del mismo tipo
-    para procesar correctamente cada \xE1rea de gesti\xF3n.\n3. \xA1 Evita que el
-    tablero se llene !"
+  m_Text: "1. Utiliza las flechas para apuntar y disparar las burbujas. Cada tipo
+    representa una tarea como l\xEDder de tienda. \n2. Junta 3 o m\xE1s burbujas
+    del mismo tipo para procesar correctamente cada \xE1rea de gesti\xF3n.\n3. \xA1
+    Evita que el tablero se llene !"
 --- !u!222 &840861084
 CanvasRenderer:
   m_ObjectHideFlags: 0
