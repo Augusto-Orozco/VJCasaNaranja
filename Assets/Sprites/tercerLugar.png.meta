@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 5b199d3092b0f4ae88812888c3277c1d
+guid: e7b58fe660c9543caa1f48cfebaab14e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2780540300400067551
-    second: Checkmark_0
+      213: -6258137492670992592
+    second: tercerLugar_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -152,13 +152,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Checkmark_0
+      name: tercerLugar_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 11
         y: 0
-        width: 1280
-        height: 1256
+        width: 490
+        height: 512
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -167,8 +167,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: fd30109dba6769620800000000000000
-      internalID: 2780540300400067551
+      spriteID: 03faac18b11a629a0800000000000000
+      internalID: -6258137492670992592
       vertices: []
       indices: 
       edges: []
@@ -186,8 +186,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      Checkmark_0: 2780540300400067551
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
