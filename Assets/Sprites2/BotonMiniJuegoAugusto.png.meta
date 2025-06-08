@@ -173,7 +173,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      BotonMiniJuegoAugusto_0: -4894624629482574997
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
