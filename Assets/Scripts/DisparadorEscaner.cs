@@ -12,36 +12,64 @@ public class DisparadorEscaner : MonoBehaviour
 
     public PowerUp powerUpManager;
     public GameObject zonaDerrota;
-
+    private float direccionRotacion = 0f;
 
     void Start()
     {
         generarBurbuja();
     }
 
+    // Parte de la logica para utilizar botones para manejar el disparador.
+    public void RotarIzquierda(bool activo)
+    {
+        direccionRotacion = activo ? -1f : 0f;
+    }
+
+    public void RotarDerecha(bool activo)
+    {
+        direccionRotacion = activo ? 1f : 0f;
+    }
+
+    public void BotonDisparar()
+    {
+        Disparar();
+    }
+
+
     public GameObject GetBurbujaActual()
     {
         return burbujaActual;
     }
+
     void Update()
     {
-        rotarDisparador();
+    #if UNITY_EDITOR
+        // Para seguir probando con teclado en la PC
+        float input = Input.GetAxis("Horizontal");
+        if (input != 0)
+            direccionRotacion = input;
+        else if (direccionRotacion != -1f && direccionRotacion != 1f)
+            direccionRotacion = 0;
+
         if (Input.GetKeyDown(KeyCode.Space))
             Disparar();
-    }
+    #endif
 
+        rotarDisparador();
+    }
 
     void rotarDisparador()
     {
-        float input = Input.GetAxis("Horizontal");
-        transform.Rotate(0, 0, -input * velocidadRotacion * Time.deltaTime);
+        if (direccionRotacion == 0f) return;
 
-        // Limita el ángulo
+        transform.Rotate(0, 0, -direccionRotacion * velocidadRotacion * Time.deltaTime);
+
         float z = transform.eulerAngles.z;
         if (z > 180 && z < 280) z = 280;
         else if (z < 180 && z > 80) z = 80;
         transform.eulerAngles = new Vector3(0, 0, z);
     }
+
 
     void generarBurbuja()
     {
