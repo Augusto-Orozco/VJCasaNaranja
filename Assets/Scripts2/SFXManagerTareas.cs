@@ -7,7 +7,7 @@ public class SFXManagerTareas : MonoBehaviour
 
     public AudioClip sonidoDeFondo;
     public AudioClip respuestaCorrecta;
-    public AudioClip respuestaIncorrecta;
+    public AudioClip respuestaIncorrecta;   
     public AudioClip minijuegoCompletado;
 
     private AudioSource musicaSource;
@@ -91,4 +91,16 @@ public class SFXManagerTareas : MonoBehaviour
     {
         return musicaSource;
     }
+
+    public void IniciarMusicaSiNoSuena()
+    {
+        if (musicaSource != null && !musicaSource.isPlaying)
+        {
+            musicaSource.clip = sonidoDeFondo;
+            musicaSource.loop = true;
+            musicaSource.volume = PlayerPrefs.GetFloat("VolumenMusicaTareas", 0.3f);
+            musicaSource.Play();
+        }
+    }
+
 }

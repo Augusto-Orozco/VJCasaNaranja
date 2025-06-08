@@ -8,6 +8,9 @@ public class SeleccionManager : MonoBehaviour
     public List<GameObject> personajes;
     public List<AudioSource> canciones;
 
+    public AudioSource CancionActiva { get; private set; }
+
+
 
     private const string personajesAPI = "https://localhost:7029/Augusto/ObtenerPersonajes";
     private const string cancionesAPI = "https://localhost:7029/AugustoController2/ObtenerCanciones";
@@ -77,10 +80,11 @@ public class SeleccionManager : MonoBehaviour
             bool esSeleccionada = cancion.gameObject.name == nombre;
     
             cancion.gameObject.SetActive(esSeleccionada);
-    
+
             if (esSeleccionada)
             {
                 cancion.Play();
+                CancionActiva = cancion;
             }
             else
             {

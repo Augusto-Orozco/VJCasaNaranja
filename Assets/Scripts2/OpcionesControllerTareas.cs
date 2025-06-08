@@ -21,7 +21,7 @@ public class OpcionesControllerTareas : MonoBehaviour
     private IEnumerator EsperarYConfigurar()
     {
         yield return new WaitForSeconds(0.1f);
-        
+
         while (SFXManagerTareas.Instancia == null)
             yield return null;
 
