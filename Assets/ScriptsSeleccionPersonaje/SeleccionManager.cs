@@ -12,8 +12,8 @@ public class SeleccionManager : MonoBehaviour
 
 
 
-    private const string personajesAPI = "https://localhost:7029/Augusto/ObtenerPersonajes";
-    private const string cancionesAPI = "https://localhost:7029/AugustoController2/ObtenerCanciones";
+    private const string personajesAPI = "https://10.22.220.253:7029/Augusto/ObtenerPersonajes";
+    private const string cancionesAPI = "https://10.22.220.253:7029/AugustoController2/ObtenerCanciones";
 
     private int numEmpleadoSesion;
 

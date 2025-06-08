@@ -7,7 +7,7 @@ public class ActualizadorMapa : MonoBehaviour
 {
     public List<GameObject> mapas;
 
-    private const string estrellasAPI = "https://localhost:7029/AugustoController3/ObtenerEstrellas";
+    private const string estrellasAPI = "https://10.22.220.253:7029/AugustoController3/ObtenerEstrellas";
     private int numEmpleadoSesion;
 
     void Start()
