@@ -31,8 +31,8 @@ public class OpcionesControllerMenu : MonoBehaviour
 
         cancionActiva = seleccionManager.CancionActiva;
 
-        float volMusica = PlayerPrefs.GetFloat("VolumenMusicaMenu", 0.3f);
-        float brillo = PlayerPrefs.GetFloat("BrilloMenu", 1f);
+        float volMusica = PlayerPrefs.GetFloat("VolumenMusica", 0.3f);
+        float brillo = PlayerPrefs.GetFloat("Brillo", 1f);
 
         sliderMusica.value = volMusica;
         sliderBrillo.value = brillo;
@@ -49,7 +49,7 @@ public class OpcionesControllerMenu : MonoBehaviour
         if (cancionActiva != null)
             cancionActiva.volume = valor;
 
-        PlayerPrefs.SetFloat("VolumenMusicaMenu", valor);
+        PlayerPrefs.SetFloat("VolumenMusica", valor);
     }
 
     void CambiarBrillo(float valor)
@@ -61,6 +61,6 @@ public class OpcionesControllerMenu : MonoBehaviour
             brilloOverlay.color = c;
         }
 
-        PlayerPrefs.SetFloat("BrilloMenu", valor);
+        PlayerPrefs.SetFloat("Brillo", valor);
     }
 }

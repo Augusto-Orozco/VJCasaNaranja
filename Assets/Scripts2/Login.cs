@@ -11,7 +11,7 @@ public class Login : MonoBehaviour
     public InputField contraseñaInput;
     public Text mensajeError;
 
-    string urlBase = "https://localhost:7029/Login/login/"; 
+    string urlBase = "https://10.22.220.253:7029/Login/login/"; 
 
     public void IntentarLogin()
     {

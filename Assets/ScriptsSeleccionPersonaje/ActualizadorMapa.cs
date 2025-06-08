@@ -21,6 +21,7 @@ public class ActualizadorMapa : MonoBehaviour
         string url = $"{estrellasAPI}?numEmpleado={numEmpleadoSesion}";
         using (UnityWebRequest www = UnityWebRequest.Get(url))
         {
+            www.certificateHandler = new ForceAcceptAll();
             yield return www.SendWebRequest();
 
             if (www.result != UnityWebRequest.Result.Success)

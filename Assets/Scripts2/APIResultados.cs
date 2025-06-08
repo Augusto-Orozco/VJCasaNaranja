@@ -27,6 +27,7 @@ public class APIResultados : MonoBehaviour
 
         UnityWebRequest request = UnityWebRequest.Put(url, json);
         request.method = UnityWebRequest.kHttpVerbPUT;
+        request.certificateHandler = new ForceAcceptAll();
         request.SetRequestHeader("Content-Type", "application/json");
 
         yield return request.SendWebRequest();
@@ -37,7 +38,7 @@ public class APIResultados : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Hubo un error al enviar los datos: " + request.error);
+            Debug.LogError("Datos no enviados a la base de datos");
         }
     }
 }

@@ -32,6 +32,7 @@ public class SeleccionManager : MonoBehaviour
         string url = $"{personajesAPI}?numEmpleado={numEmpleadoSesion}";
         using (UnityWebRequest www = UnityWebRequest.Get(url))
         {
+            www.certificateHandler = new ForceAcceptAll();
             yield return www.SendWebRequest();
 
             if (www.result != UnityWebRequest.Result.Success)
@@ -52,6 +53,7 @@ public class SeleccionManager : MonoBehaviour
         string url = $"{cancionesAPI}?numEmpleado={numEmpleadoSesion}";
         using (UnityWebRequest www = UnityWebRequest.Get(url))
         {
+            www.certificateHandler = new ForceAcceptAll();
             yield return www.SendWebRequest();
 
             if (www.result != UnityWebRequest.Result.Success)

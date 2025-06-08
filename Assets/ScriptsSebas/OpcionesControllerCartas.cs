@@ -29,9 +29,9 @@ public class OpcionesControllerCartas : MonoBehaviour
         sfx = SFXManagerCartas.Instancia;
         musicaFuente = sfx.GetMusicaSource();
 
-        float volMusica = PlayerPrefs.GetFloat("VolumenMusicaCartas", 0.5f);
-        float volEfectos = PlayerPrefs.GetFloat("VolumenEfectosCartas", 0.5f);
-        float brillo = PlayerPrefs.GetFloat("BrilloCartas", 1f);
+        float volMusica = PlayerPrefs.GetFloat("VolumenMusica", 0.5f);
+        float volEfectos = PlayerPrefs.GetFloat("VolumenEfectos", 0.5f);
+        float brillo = PlayerPrefs.GetFloat("Brillo", 1f);
 
         sliderMusica.value = volMusica;
         sliderEfectos.value = volEfectos;
@@ -50,7 +50,7 @@ public class OpcionesControllerCartas : MonoBehaviour
         if (musicaFuente != null)
             musicaFuente.volume = valor;
 
-        PlayerPrefs.SetFloat("VolumenMusicaCartas", valor);
+        PlayerPrefs.SetFloat("VolumenMusica", valor);
     }
 
     public void CambiarVolumenEfectos(float valor)
@@ -60,7 +60,7 @@ public class OpcionesControllerCartas : MonoBehaviour
             sfx.SetVolumenEfectos(valor); 
         }
 
-        PlayerPrefs.SetFloat("VolumenEfectosCartas", valor);
+        PlayerPrefs.SetFloat("VolumenEfectos", valor);
     }
 
     void CambiarBrillo(float valor)
@@ -72,6 +72,6 @@ public class OpcionesControllerCartas : MonoBehaviour
             brilloOverlay.color = c;
         }
 
-        PlayerPrefs.SetFloat("BrilloCartas", valor);
+        PlayerPrefs.SetFloat("Brillo", valor);
     }
 }

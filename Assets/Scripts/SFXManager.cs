@@ -13,13 +13,14 @@ public class SFXManager : MonoBehaviour
     void Start()
     {
         audioSource = gameObject.AddComponent<AudioSource>();
-        audioSource.volume = 0.5f; // Volumen por defecto a mitad
+
+        audioSource.volume = PlayerPrefs.GetFloat("VolumenMusica", 0.5f);
         audioSource.clip = sonidoDeFondo;
         audioSource.loop = true;
         audioSource.Play();
 
         efectosSource = gameObject.AddComponent<AudioSource>();
-        efectosSource.volume = 0.5f; // Volumen por defecto a mitad
+        efectosSource.volume = PlayerPrefs.GetFloat("VolumenEfectos", 0.5f); // Volumen por defecto a mitad
         efectosSource.loop = false;
     }
 

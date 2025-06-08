@@ -18,9 +18,10 @@ public class EstadisticasUI : MonoBehaviour
 
     IEnumerator ObtenerEstadisticas(int id)
     {
-        string url = $"https://localhost:7029/Estadisticas/Estadisticas/{id}";
+        string url = $"https://10.22.220.253:7029/Estadisticas/Estadisticas/{id}";
 
         UnityWebRequest request = UnityWebRequest.Get(url);
+        request.certificateHandler = new ForceAcceptAll();
         request.SetRequestHeader("Content-Type", "application/json");
 
         yield return request.SendWebRequest();
