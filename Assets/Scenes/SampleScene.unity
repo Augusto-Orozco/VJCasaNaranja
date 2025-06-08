@@ -324,7 +324,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.52, y: 7.15}
+    oldSize: {x: 3.78, y: 7.74}
     newSize: {x: 3.52, y: 7.15}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -681,7 +681,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.52, y: 7.15}
+    oldSize: {x: 3.77, y: 7.67}
     newSize: {x: 3.52, y: 7.15}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -844,7 +844,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.52, y: 7.15}
+    oldSize: {x: 3.76, y: 7.7}
     newSize: {x: 3.52, y: 7.15}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1317,7 +1317,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.52, y: 7.15}
+    oldSize: {x: 3.8, y: 7.72}
     newSize: {x: 3.52, y: 7.15}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1937,7 +1937,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 3.52, y: 7.15}
+    oldSize: {x: 3.76, y: 7.66}
     newSize: {x: 3.52, y: 7.15}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -2566,14 +2566,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\t\t\t\t\t\t\t\t\t\tBienvenido a Tarjoxxo\n\n1. Tendr\xE1s que deslizar
-    las cartas a la izquierda o derecha, dependiendo de la respuesta correcta que
-    est\xE1n en la parte inferior de las cartas y de la situaci\xF3n que aparece
-    arriba del personaje.\n\n2. Tendr\xE1s un total de 3 minutos para poder solucionar
-    todos los problemas que se mostrar\xE1n en los indicadores arriba del personaje
+  m_Text: "\t\t\t\t\t\t\t\t\t\xA1Bienvenido a Tarjoxxo!\n\n1. Deber\xE1s deslizar
+    las cartas hacia la izquierda o la derecha, seg\xFAn la respuesta correcta que
+    se muestra en la parte inferior de cada carta y la situaci\xF3n que aparece sobre
+    el personaje.\n\n2. Contar\xE1s con un total de 3 minutos para resolver todos
+    los problemas que se presentar\xE1n en los indicadores situados encima del personaje
     de cada carta.\n\n3. Por cada respuesta incorrecta, se te restar\xE1n puntos.\n\n4.
-    Por m\xE1s tiempo que pase tambi\xE9n se te restar\xE1n puntos.\n\n\t\t\t\t\t\t\t\t\t\t\tBuena
-    suerte!!!\n"
+    Tambi\xE9n perder\xE1s puntos a medida que transcurra el tiempo.\n\n\t\t\t\t\t\t\t\t\t\t\t\xA1Buena
+    suerte!\n"
 --- !u!222 &1577759909
 CanvasRenderer:
   m_ObjectHideFlags: 0
