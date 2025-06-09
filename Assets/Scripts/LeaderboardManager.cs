@@ -31,7 +31,8 @@ public class LeaderboardManager : MonoBehaviour
 
     IEnumerator GetLeaderboard()
     {
-        UnityWebRequest www = UnityWebRequest.Get("https://localhost:7029/Leaderboard/Top10");
+        UnityWebRequest www = UnityWebRequest.Get("https://10.22.220.253:7029/Leaderboard/Top10");
+        www.certificateHandler = new ForceAcceptAll();
         yield return www.SendWebRequest();
 
         if (www.result != UnityWebRequest.Result.Success)
@@ -64,7 +65,7 @@ public class LeaderboardManager : MonoBehaviour
             string linea = $"{lugar}. {nombreResaltado} — Puntos: {entry.puntuacionTotal} — Estrellas: {entry.totalEstrellas}";
 
             if (i == 0)
-                resultado += $"<color=#FFD700><b>{linea}</b></color>\n\n";
+                resultado += $"<color=#DAA520><b>{linea}</b></color>\n\n";
             else if (i == 1)
                 resultado += $"<color=#A9A9A9><b>{linea}</b></color>\n\n";
             else if (i == 2)
