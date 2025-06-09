@@ -36,9 +36,6 @@ public class APIResultados : MonoBehaviour
         {
             Debug.Log(" Se enviaron los datos correctamente: " + request.downloadHandler.text);
         }
-        else
-        {
-            Debug.LogError("Datos no enviados a la base de datos");
-        }
+
     }
 }
