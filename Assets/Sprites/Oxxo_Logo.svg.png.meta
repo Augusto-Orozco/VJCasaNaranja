@@ -186,7 +186,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Oxxo_Logo.svg_0: -1766670767433541116
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
